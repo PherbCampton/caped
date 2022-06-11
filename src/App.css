@@ -1,38 +1,218 @@
-.App {
-  text-align: center;
+/********* UNIVERSAL *********/
+
+* {
+  box-sizing: border-box;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: bold;
+  font-size: 17px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html{
+  margin: 0 150px 40px 150px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a {
+  text-decoration: none;
+  color: #000000;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h2 {
+  margin: 40px 0 50px 0;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+h3 {
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+/********* HEADER/NAV *********/
+
+nav {
+  padding: 30px 0 25px 0;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  z-index: 1;
+}
+
+.nav-search {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 50px;
+  padding: 0;
+  margin-left: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 50px;
+  padding: 0;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  width: 220px;
+  max-width: 700px;
+}
+
+.nav-buttons {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 17px;
+  padding: 0;
+  text-transform: lowercase;
+}
+
+.nav-buttons:hover,
+.nav-buttons:focus {
+  border-bottom: solid 2px;
+}
+
+.nav-icons {
+  display: flex;
+  align-self: center;
+  gap: 30px;
+  padding: 0;
+}
+
+/********* SIDEBAR *********/
+
+
+.sidebar {
+  position: fixed;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  width: 300px;
+  min-width: 200px;
+}
+
+.sidebar-icons {
+  position: relative;
+  bottom: -7.5px;
+  margin-right: 10px;
+}
+
+.sidebar-top-section {
+  margin-bottom: 200px;
+}
+
+.sidebar-bottom-section {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+/********* GALLERY AND CARDS *********/
+
+.gallery {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  max-width: 1103px;
+  gap: 21px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 21px;
+}
+
+.landscape-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+}
+
+.portrait,
+.apicard {
+  position:static;
+  object-fit:cover;
+  width: 259px;
+  height: 380px;
+  border-radius: 10px;
+  background-color: #cccccc;
+  animation-duration: 50s;
+  animation-fill-mode:inherit;
+  animation-iteration-count:infinite;
+  animation-name: placeHolderShimmer;
+  animation-play-state:running;
+  animation-timing-function:linear;
+  background: linear-gradient(to right, #cccccca5 -10%, #cccccc 30%, #cccccc -10%)
+}
+
+@keyframes placeHolderShimmer {
+  100% {
+    background-position: -1000px -1000px;
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    background-position: 1000px 1000px;
   }
+}
+
+.landscape {
+  object-fit: contain;
+  width: 539px;
+  height: 180px;
+  border-radius: 10px;
+  background-color: #BCE7F0;
+  animation-duration: 50s;
+  animation-fill-mode:inherit;
+  animation-iteration-count:infinite;
+  animation-name: placeHolderShimmer;
+  animation-timing-function:linear;
+  background: linear-gradient(to left, #BCE7F0a5 -10%, #bce7f0 30%, #BCE7F0 -10%);
+}
+
+.favorite {
+  position:absolute;
+  margin: 20px 0 0 200px;
+}
+
+.flexbox {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px
+}
+
+.flex-wrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1103px;
+}
+
+.no-sidebar {
+  display: flex;
+  margin: auto;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1103px;
+}
+
+.card--price {
+  position: absolute;
+  margin: 330px 0 0 20px;
+  background-color: #313638;
+  color: #ffffff;
+  padding: 5px 7px;
+  border-radius: 2px;
+  font-weight: bold;
+  overflow: hidden;
 }
